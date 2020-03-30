@@ -4,7 +4,6 @@ import com.example.rickmortiapi.dto.api.mapper.CharacterMapper;
 import com.example.rickmortiapi.dto.api.response.ApiCharacterDto;
 import com.example.rickmortiapi.dto.api.response.ApiCharacterListDto;
 import com.example.rickmortiapi.entity.Character;
-import com.example.rickmortiapi.entity.Location;
 import com.example.rickmortiapi.repository.CharacterRepository;
 import com.example.rickmortiapi.util.HttpClient;
 import com.fasterxml.jackson.core.JsonProcessingException;

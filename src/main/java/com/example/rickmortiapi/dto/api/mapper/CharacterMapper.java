@@ -2,7 +2,6 @@ package com.example.rickmortiapi.dto.api.mapper;
 
 import com.example.rickmortiapi.dto.api.response.ApiCharacterDto;
 import com.example.rickmortiapi.dto.api.response.ApiCharacterLocationDto;
-import com.example.rickmortiapi.dto.api.response.ApiLocationDto;
 import com.example.rickmortiapi.entity.Character;
 import com.example.rickmortiapi.entity.Episode;
 import com.example.rickmortiapi.entity.Location;
