@@ -59,16 +59,15 @@ public class LocationServiceImpl implements LocationService {
                 next = locationListDto.getInfo().getNext();
             }
 
-            mapAndSaveLocations(locationDtos);
+            saveAll(mapLocations(locationDtos));
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Error occurred while parsing location response!", e);
         }
     }
 
-    private void mapAndSaveLocations(List<ApiLocationDto> locationDtos) {
-        saveAll(locationDtos.stream()
+    private List<Location> mapLocations(List<ApiLocationDto> locationDtos) {
+        return locationDtos.stream()
                 .map(locationMapper::getLocationFromDto)
-                .collect(Collectors.toList())
-        );
+                .collect(Collectors.toList());
     }
 }

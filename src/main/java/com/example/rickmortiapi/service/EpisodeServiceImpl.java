@@ -59,16 +59,15 @@ public class EpisodeServiceImpl implements EpisodeService {
                 next = episodeListDto.getInfo().getNext();
             }
 
-            mapAndSaveEpisodes(episodeDtos);
+            saveAll(mapEpisodes(episodeDtos));
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Error occurred while parsing episode response!", e);
         }
     }
 
-    private void mapAndSaveEpisodes(List<ApiEpisodeDto> episodeDtos) {
-        saveAll(episodeDtos.stream()
+    private List<Episode> mapEpisodes(List<ApiEpisodeDto> episodeDtos) {
+        return episodeDtos.stream()
                 .map(episodeMapper::getEpisodeFromDto)
-                .collect(Collectors.toList())
-        );
+                .collect(Collectors.toList());
     }
 }

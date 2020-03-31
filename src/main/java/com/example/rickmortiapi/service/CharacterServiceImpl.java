@@ -70,16 +70,15 @@ public class CharacterServiceImpl implements CharacterService {
                 next = characterListDto.getInfo().getNext();
             }
 
-            mapAndSaveCharacters(characterDtos);
+            saveAll(mapCharacters(characterDtos));
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Error occurred while parsing character response!", e);
         }
     }
 
-    private void mapAndSaveCharacters(List<ApiCharacterDto> characterDtos) {
-        saveAll(characterDtos.stream()
+    private List<Character> mapCharacters(List<ApiCharacterDto> characterDtos) {
+        return characterDtos.stream()
                 .map(characterMapper::getCharacterFromDto)
-                .collect(Collectors.toList())
-        );
+                .collect(Collectors.toList());
     }
 }

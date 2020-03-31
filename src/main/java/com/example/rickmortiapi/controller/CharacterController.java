@@ -12,13 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/character")
 public class CharacterController {
-    private UpdateDatabaseController updateDatabaseController;
     private CharacterService characterService;
 
     @Autowired
-    public CharacterController(UpdateDatabaseController updateDatabaseController,
-                               CharacterService characterService) {
-        this.updateDatabaseController = updateDatabaseController;
+    public CharacterController(CharacterService characterService) {
         this.characterService = characterService;
     }
 
