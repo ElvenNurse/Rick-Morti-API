@@ -16,7 +16,7 @@ public class HttpClient {
         HttpGet request = new HttpGet(url);
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
-             CloseableHttpResponse response = httpClient.execute(request)) {
+                CloseableHttpResponse response = httpClient.execute(request)) {
 
             HttpEntity entity = response.getEntity();
             if (entity != null) {
