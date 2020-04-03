@@ -2,12 +2,14 @@ package com.example.rickmortiapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
+@EnableScheduling
 @SpringBootApplication
-public class RickMortiApiApplication {
+public class RickMortyApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RickMortiApiApplication.class, args);
+        SpringApplication.run(RickMortyApiApplication.class, args);
     }
 
 }
